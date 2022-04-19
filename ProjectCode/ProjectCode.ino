@@ -60,9 +60,9 @@ void loop()
   lcd.print("*C");
   ///NEM SENSÖRÜ
  
-  int nem = analogRead(M_Sensor); //Read Moisture Sensor Value 
+  int nem = analogRead(M_Sensor); //Nem Sensörü
 
- if (nem> 700)   // for dry soil
+ if (nem> 700)   //Kuru Toprak
   { 
         lcd.setCursor(11,0);
         lcd.print("KURU");
@@ -71,7 +71,7 @@ void loop()
        
     }
  
-     else if (nem > 300 && nem<=700) //for Moist Soil
+     else if (nem > 300 && nem<=700) //Nemli Toprak
     { 
       lcd.setCursor(11,0);
      lcd.print("NEMLI");
@@ -79,7 +79,7 @@ void loop()
      lcd.print("TOPRAK");
          
     }
-    else if (nem<=300) //for Moist Soil
+    else if (nem<=300) //Islak Toprak
     { 
       lcd.setCursor(11,0);
      lcd.print("ISLAK");
@@ -104,7 +104,7 @@ void loop()
   delay(10);
   }
   //SICAKLIK SENSÖRÜ
-  val = analogRead(T_Sensor); //Read Temperature sensor value 
+  val = analogRead(T_Sensor); //Sıcaklık Sensörü 
   int mv = ( val/1024.0)*5000; 
   cel = mv/10;
   /////SIVI SEVİYESİ SENSÖRÜ 
